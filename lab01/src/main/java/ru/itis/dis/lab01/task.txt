@@ -1,0 +1,12 @@
+1. InetAddress
+2. TCP/IP socket
+3. ServerSocket & Socket
+4. Applications client <-> server
+
+task
+
+Разработать приложение - чат
+
+обработка подключения клиента в отдельном потоке (Thread)
+
+конец связи - "end\n"
