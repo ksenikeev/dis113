@@ -3,7 +3,7 @@
 3. ServerSocket & Socket
 4. Applications client <-> server
 
-task
+task 1
 
 Разработать приложение - чат
 
