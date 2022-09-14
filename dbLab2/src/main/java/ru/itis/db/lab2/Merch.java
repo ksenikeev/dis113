@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter@Setter@AllArgsConstructor
-public class Client {
+public class Merch {
+    private String artikul;
     private String name;
-    private String email;
+    private Float price;
+    private Store store;
+    private Integer count;
 }

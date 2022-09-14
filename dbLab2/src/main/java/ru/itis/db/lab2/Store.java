@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter@Setter@AllArgsConstructor
-public class Client {
-    private String name;
-    private String email;
+public class Store {
+    private Market market;
+    private String address;
 }
