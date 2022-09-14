@@ -24,9 +24,9 @@ public class Client {
                 System.out.print("Введите вопрос: ");
                 String question = in.nextLine();
 
-                //send question to server
-                os.write(question.getBytes("UTF-8"));
-                // read response from server
+                //1. send question to server
+                os.write((question + "\n").getBytes("UTF-8"));
+                //2. read response from server
                 String response = reader.readLine();
 
                 System.out.printf("Ответ: %s \n", response);
@@ -37,6 +37,7 @@ public class Client {
 
             }
             in.close();
+            os.close();
             clientSocket.close();
         } catch (UnknownHostException e) {
             e.printStackTrace();
