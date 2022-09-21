@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bank>
+    <clients>
+        <client>
+            <name>Клиент 3</name>
+            <passport>333 11111</passport>
+        </client>
+        <client>
+            <name>Клиент 4</name>
+            <passport>444 22222</passport>
+        </client>
+    </clients>
+    <name>Банк 2</name>
+</bank>
