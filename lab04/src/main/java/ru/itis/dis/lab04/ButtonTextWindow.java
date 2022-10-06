@@ -46,7 +46,7 @@ public class ButtonTextWindow extends JFrame {
         this.add(textField);
 
         label2 = new JLabel();
-        label2.setBounds(10, 70, 100,20);
+        label2.setBounds(10, 70, 200,20);
         label2.setText("Информация");
         this.add(label2);
     }
