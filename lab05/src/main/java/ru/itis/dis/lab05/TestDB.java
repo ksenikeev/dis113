@@ -14,8 +14,12 @@ public class TestDB {
 
 
             Statement statement = conn.createStatement();
+
+            String sql = "CREATE TABLE test_tbl(id bigint, name varchar(255), PRIMARY KEY (id)) ";
+            statement.execute(sql);
+
             // Выборка данных (SELECT)
-            String sql ="select name,birthdate,gender,facultet_name,height from student";
+            sql ="select name,birthdate,gender,facultet_name,height from student";
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
