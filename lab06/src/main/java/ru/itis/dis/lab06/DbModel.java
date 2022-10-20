@@ -6,20 +6,20 @@ import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 
 class DbModel extends AbstractTableModel {
-    // количество строк
-    private ArrayList<String> columnNames = new
-            ArrayList<String>();
-    // список типов столбцов
+    // список колонок
+    private ArrayList<String> columnNames = new ArrayList<String>();
+    // список типов колонок
     private ArrayList<Class> columnTypes = new ArrayList<Class>();
     // хранилище для полученных данных из базы данных
-    private ArrayList<ArrayList<Object>> data
-            = new ArrayList<ArrayList<Object>>();
+    private ArrayList<ArrayList<Object>> data = new ArrayList<ArrayList<Object>>();
+
     // признак редактирования таблицы
     private boolean editable;
     // конструктор позволяет задать возможность редактирования
     public DbModel(boolean editable) {
         this.editable = editable;
     }
+
     // количество строк
     public int getRowCount() {
         return data.size();

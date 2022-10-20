@@ -11,7 +11,8 @@ public class InnerWindow {
                         //new SimpleDBTable();
                         //new DefaultModelTableFrame();
                         //new SimpleTableFrame();
-                        new ExModelTableFrame();
+                        //new ExModelTableFrame();
+                        new EditableTable();
                     } });
     }
 }
