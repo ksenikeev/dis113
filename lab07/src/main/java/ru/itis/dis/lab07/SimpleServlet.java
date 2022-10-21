@@ -2,16 +2,18 @@ package ru.itis.dis.lab07;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Date;
 
 @WebServlet("/simple")
 public class SimpleServlet implements Servlet {
 
+    public final Date date = new Date();
+
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
+        System.out.println("init SimpleServlet");
     }
 
     @Override
@@ -21,7 +23,8 @@ public class SimpleServlet implements Servlet {
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("Hello!");
+        System.out.println("service SimpleServlet");
+        response.getWriter().println("Hello! " + this);
     }
 
     @Override
@@ -31,6 +34,6 @@ public class SimpleServlet implements Servlet {
 
     @Override
     public void destroy() {
-
+        System.out.println("destroy SimpleServlet");
     }
 }

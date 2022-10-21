@@ -6,7 +6,7 @@ Tomcat
 
 https://tomcat.apache.org/download-10.cgi
 
-https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html
+https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#what-is-a-servlet
 
 ## Протокло HTTP
 
@@ -23,6 +23,11 @@ Host: localhost:8080\n\r
 ...
 \n\r
 ```
+
+Основные параметры запроса:
+- Метод (GET, POST, PUT, DELETE, ...)
+- Путь к ресурсу (path)
+- Протокол и его версия
 
 ### Ответ (Response)
 
@@ -42,10 +47,18 @@ HTTP/1.1\n
 36368\n
 ```
 
+Основные параметры ответа:
+- Протокол и его версия
+- код ответа (200 - ОК, 404 - not found, ...)
+
+Servlet API использует для обработки запроса классы специального вида - _сервлеты_ (servlets).
+Такой класс должен реализовать интерфейс _jakarta.servlet.Servlet_
+
 ## Java Servlet
 
-class:
-```java
+
+
+```
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 
@@ -61,6 +74,9 @@ public class SimpleServlet implemets Servlet {
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+        /*
+                Главный метод обработки запроса
+         */
     }
 
     @Override
