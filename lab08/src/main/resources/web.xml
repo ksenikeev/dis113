@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
+    <display-name>lab08</display-name>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+
+    <servlet>
+        <servlet-name>simple_servlet</servlet-name>
+        <servlet-class>ru.itis.dis.lab08.SimpleServlet</servlet-class>
+        <init-param>
+            <param-name>aaa</param-name>
+            <param-value>111</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>simple_servlet</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+
+</web-app>
