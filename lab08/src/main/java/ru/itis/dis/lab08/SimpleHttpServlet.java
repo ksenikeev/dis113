@@ -8,14 +8,24 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/index")
+@WebServlet("/simple")
 public class SimpleHttpServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String content = "";
 
-        resp.getWriter().println(content);
+        PrintWriter pw = response.getWriter();
+
+        pw.println(request.getMethod());
+        pw.println(request.getProtocol());
+        pw.println(request.getContextPath());
+        pw.println(request.getPathInfo());
+
+        pw.println(request.getContentLength());
+        pw.println(request.getContentType());
+
+        pw.println(request.getHeader("User-Agent"));
     }
 
     @Override
