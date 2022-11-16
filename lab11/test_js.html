@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test AJAX</title>
+</head>
+<body>
+
+<div id="d_elem">
+
+</div>
+
+<button onclick="c()">Press me</button>
+
+<script type="text/javascript">
+        async function c() {
+            let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+            let text = await response.text(); // прочитать тело ответа как текст
+
+            let divid = document.getElementById("d_elem");
+
+            divid.innerHTML = text.slice(0, 80) + '...';
+        }
+</script>
+
+</body>
+</html>

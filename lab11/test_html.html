@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <input id="i_elem" value="Test Value"/>
+
+    <script type="text/javascript">
+	    let elem = document.getElementById("i_elem");
+	    console.log(elem.value);
+	    elem.value = 'NEW VALUE';
+
+    </script>
+
+    <script type="text/javascript">
+		function a(b) {
+			alert(b);
+		}
+
+		function b(a) {
+			return a+1;
+		}
+
+		function c() {
+            let elem = document.getElementById("i_elem");
+            alert( elem.value);
+		}
+	</script>
+
+    <button onclick="c()">Press me</button>
+</body>
+</html>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
    http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 
-    <display-name>lab10</display-name>
+    <display-name>lab11</display-name>
 
     <session-config>
         <session-timeout>60</session-timeout>
