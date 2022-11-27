@@ -11,10 +11,20 @@
 
 </div>
 
-<button onclick="c()">Press me</button>
+<div>
+    <button onclick="c_get()">Press me (GET Request)</button>
+</div>
+
+<div>
+    <label for="data">Write data:</label>
+    <input id="data" name="data" placeholder="data for send">
+<div>
+<div>
+    <button onclick="d_post()">Press me (POST Request)</button>
+</div>
 
 <script type="text/javascript">
-        async function c() {
+        async function c_get() {
             let response = await fetch('${pageContext.request.contextPath}/value');
 
             let text = await response.text(); // прочитать тело ответа как текст
@@ -22,6 +32,30 @@
             let divid = document.getElementById("d_elem");
 
             divid.innerHTML = text;
+        }
+
+        async function d_post() {
+            let indata = document.getElementById("data");
+
+            let json_data = {
+                msg : 'hello',
+                data: indata.value
+            }
+
+            let response = await fetch('${pageContext.request.contextPath}/value',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+              body: JSON.stringify(json_data)
+            });
+
+            let json_response = await response.json(); // прочитать тело ответа как json
+
+            let divid = document.getElementById("d_elem");
+
+            divid.innerHTML = json_response.data;
         }
 </script>
 

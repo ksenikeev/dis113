@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+<!--
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+-->
+
+    <style>
+
+<!--
+        html {
+            font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        }
+-->
+
+.centerdiv {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid gray;
+        }
+
+        th {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+            color: #909090;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .zebra {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid green;
+        }
+
+        .zebra tr:nth-child(odd) {
+            background-color: #ff33cc;
+        }
+
+        .zebra tr:nth-child(even) {
+            background-color: #e495e4;
+        }
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="centerdiv"></div>
+
+<h1>Стили таблиц</h1>
+
+
+<div>
+    <table>
+        <th>Column 1</th><th>Column 2</th>
+        <tr>
+            <td>Value 11</td><td>Value 12</td>
+        </tr>
+        <tr>
+            <td>Value 21</td><td>Value 22</td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <table class="zebra">
+        <th>Column 1</th><th>Column 2</th>
+        <tr>
+            <td>Value 11</td><td>Value 12</td>
+        </tr>
+        <tr>
+            <td>Value 21</td><td>Value 22</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+
