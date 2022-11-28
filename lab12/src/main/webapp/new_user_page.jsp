@@ -15,6 +15,7 @@
 
     <div><label>Имя</label><input name="username" type="text"></div>
     <div><label>Пароль</label><input name="password" type="password"></div>
+    <div><label>Телефон</label><input name="phone" type="text"></div>
     <div><input type="file" name="imgfile"></div>
 
     <div><button type="submit">Загрузить</button></div>

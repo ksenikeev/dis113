@@ -22,11 +22,11 @@ public class SaveUserWithPhotoServlet extends HttpServlet {
 
         User user = new User();
 
-        System.out.println(request.getParameter("username"));
         user.setUsername(request.getParameter("username"));
 
-        System.out.println(request.getParameter("password"));
         user.setPassword(request.getParameter("password"));
+
+        user.setPhone(request.getParameter("phone"));
 
         try {
             for (Part part : request.getParts()) {

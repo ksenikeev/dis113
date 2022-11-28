@@ -32,10 +32,11 @@ public class UserService {
 
             if (id != null) {
                 String sql2 =
-                        "insert into user_info (id,phone, photo) values (?, '876897696',?)";
+                        "insert into user_info (id,phone, photo) values (?, ?, ?)";
                 PreparedStatement ps2 = connection.prepareStatement(sql2);
                 ps2.setInt(1, id);
-                ps2.setBytes(2, user.getPhoto());
+                ps2.setString(2, user.getPhone());
+                ps2.setBytes(3, user.getPhoto());
                 //Query 2
                 ps2.executeUpdate();
                 ps2.close();
