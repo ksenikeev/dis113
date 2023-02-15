@@ -7,10 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import ru.itis.semestr2.model.*;
+import ru.itis.semestr2.repository.TripRepository;
 import ru.itis.semestr2.repository.UserCheckRepository;
 import ru.itis.semestr2.repository.UserRepository;
 
 import java.io.IOException;
+import java.util.List;
 
 // save registration data
 @WebServlet("/usercheck")
@@ -31,6 +33,10 @@ public class UserCheckServlet extends HttpServlet {
         if (user != null) {
             if (user.getRole().getId() == 2) {
                 successPage = "driver_page.jsp";
+
+                TripRepository tripRepository = new TripRepository();
+                List<Trip> trips = tripRepository.getFreeTrips();
+                request.setAttribute("trips", trips);
             }
 
             HttpSession session = request.getSession(true);

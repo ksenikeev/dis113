@@ -7,4 +7,10 @@ import lombok.Setter;
 public class TripStatus {
     private Integer id;
     private String name;
+
+    public TripStatus() {}
+
+    public TripStatus(String name) {
+        this.name = name;
+    }
 }

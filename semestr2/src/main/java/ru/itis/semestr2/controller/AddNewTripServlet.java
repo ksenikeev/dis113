@@ -37,12 +37,18 @@ public class AddNewTripServlet extends HttpServlet {
         // Проверка Авторизации (проверка роли)
         if (user.getRole().getId() == 1) {
 
-            page = "alltrips_page.jsp";
             String adddressFrom = request.getParameter("address_from");
             String adddressTo = request.getParameter("address_to");
 
             TripRepository repository = new TripRepository();
             repository.addTrip(adddressFrom, adddressTo, user.getId());
+
+            // Show page Trip status
+            request.setAttribute("address_from", adddressFrom);
+            request.setAttribute("address_to", adddressTo);
+            request.setAttribute("trip_status", "Заказана");
+            page = "trip_page.jsp";
+
         }
 
         try {
