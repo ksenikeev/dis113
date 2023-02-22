@@ -1,8 +1,8 @@
 package ru.itis.dis.lab2_3.components;
 
+import ru.itis.dis.lab2_3.IWeatherService;
 import ru.itis.dis.lab2_3.annotations.Component;
 import ru.itis.dis.lab2_3.annotations.Propertie;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,11 +10,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 @Component
-public class WeatherService {
+public class YandexWeatherService implements IWeatherService {
 
     @Propertie
     private String yandexKey;
 
+    @Override
     public String getWeather(String lat, String lon) {
 
 

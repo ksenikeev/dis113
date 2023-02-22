@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Application container
+ */
 public class Context {
 
     /*
@@ -30,6 +33,8 @@ public class Context {
 
     private List<Class<?>> classesInPath;
 
+    // <ClassName:String, ClassInstance:Object>
+    // <+InterfaceName:String, ClassInstance:Object>
     private Map<String, Object> components = new HashMap<>();
 
     private Properties properties = new Properties();
@@ -57,6 +62,14 @@ public class Context {
                     Constructor constructor = cl.getConstructor();
                     Object o = constructor.newInstance();
                     components.put(cl.getSimpleName(), o);
+
+                    Class[] interfaces = cl.getInterfaces();
+                    for (Class ic : interfaces) {
+                        //System.out.println(cl.getSimpleName() +
+                        //        " implement Interface " + ic.getSimpleName());
+                        components.put(ic.getSimpleName(), o);
+                    }
+
                     break;
                 }
             }
