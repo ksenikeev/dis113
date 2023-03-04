@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Описание бина -->
+    <bean id="amount" class="ru.itis.lab2_4_spring.components.ClientAmount" scope="prototype"><!--scope: prototype, singleton  -->
+        <!-- Описание аргументов конструктора и их значений  -->
+        <constructor-arg name="amount" value="1000"/>
+        <!-- Внедряем зависимость -->
+        <property name="bank" ref="bank"/>
+    </bean>
+
+    <bean id="bank" class="ru.itis.lab2_4_spring.components.FirstBank">
+        <constructor-arg name="name" value="Первый Банк"/>
+        <property name="branchOffice" value="Филиал 1"/>
+    </bean>
+</beans>
