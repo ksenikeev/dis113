@@ -1,4 +1,4 @@
-package ru.itis.lab2_5_JPA.model;
+package ru.itis.lab2_5_JPA.annotations.model;
 
 import java.util.Date;
 

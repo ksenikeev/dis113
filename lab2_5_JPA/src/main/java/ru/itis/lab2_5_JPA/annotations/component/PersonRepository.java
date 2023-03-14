@@ -1,7 +1,7 @@
-package ru.itis.lab2_5_JPA.component;
+package ru.itis.lab2_5_JPA.annotations.component;
 
 import org.springframework.stereotype.Component;
-import ru.itis.lab2_5_JPA.model.Person;
+import ru.itis.lab2_5_JPA.annotations.model.Person;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

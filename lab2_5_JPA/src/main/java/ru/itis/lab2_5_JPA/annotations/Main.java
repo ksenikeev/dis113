@@ -1,10 +1,10 @@
-package ru.itis.lab2_5_JPA;
+package ru.itis.lab2_5_JPA.annotations;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.itis.lab2_5_JPA.component.PersonService;
-import ru.itis.lab2_5_JPA.config.ApplicationConfig;
-import ru.itis.lab2_5_JPA.model.Person;
+import ru.itis.lab2_5_JPA.annotations.component.PersonService;
+import ru.itis.lab2_5_JPA.annotations.config.ApplicationConfig;
+import ru.itis.lab2_5_JPA.annotations.model.Person;
 
 import java.text.ParseException;
 import java.util.List;
