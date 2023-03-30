@@ -3,12 +3,12 @@ package ru.itis.lab2_8.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter @ToString
 public class AccessProtocol {
 
     @Id

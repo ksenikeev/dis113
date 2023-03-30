@@ -10,8 +10,10 @@
 </head>
 <body>
 
+    <h2>${message}</h2>
+
+
 <div class="mcnt">
-    <h2>Аутентификация</h2>
     <form class="container" action="/login" method="post" onsubmit="validate()">
         <input class="field" name="username" placeholder="имя пользователя"/>
         <input type="password" class="field" name="password" placeholder="пароль"/>
