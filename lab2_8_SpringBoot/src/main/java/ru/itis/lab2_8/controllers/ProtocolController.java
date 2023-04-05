@@ -55,4 +55,24 @@ public class ProtocolController {
         return "protocol";
     }
 
+    @GetMapping("/adminlogspage")
+    public String showAdminLogsAsHTML(Model model) {
+        // for, iterator.hasNext, iterator.next
+        Iterable<AccessProtocol> logs =
+                repository.findByUsernameOrSuccess("admin", true);
+
+        List<AccessProtocol> result = new ArrayList<>();
+
+        Iterator<AccessProtocol> iterator = logs.iterator();
+
+        while (iterator.hasNext()) {
+            AccessProtocol accessProtocol = iterator.next();
+            result.add(accessProtocol);
+        }
+
+        model.addAttribute("protocols", result);
+        // return html template protocol.ftlh
+        return "protocol";
+    }
+
 }

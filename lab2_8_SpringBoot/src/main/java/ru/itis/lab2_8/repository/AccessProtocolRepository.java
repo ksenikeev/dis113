@@ -1,11 +1,11 @@
 package ru.itis.lab2_8.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import ru.itis.lab2_8.model.AccessProtocol;
+import java.util.List;
 
-@Repository
 public interface AccessProtocolRepository
         extends CrudRepository<AccessProtocol, Long> {
+    List<AccessProtocol> findByUsernameOrSuccess(String username, Boolean success);
 
 }
