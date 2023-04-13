@@ -1,0 +1,58 @@
+
+body {
+    background-image: url(/static/image/6491749.jpg);
+    color: #4b4d4d;
+    font-family: Arial;
+    font-size: 16pt;
+}
+
+input {
+    color: #4b4d4d;
+    font-family: Arial;
+    font-size: 16pt;
+    height: auto;
+    margin: 5px;
+}
+
+button, input[type=submit] {
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 16pt;
+    margin: 5px;
+    border-radius:8px;
+    border-width: 0px;
+    background-color:#7DD060;
+    padding:6px 10px;
+    text-decoration:none;
+}
+
+button:hover {
+  background: #7DDD60;
+}
+
+button:disabled {
+  background: #bfc0c3;
+}
+
+.logout {
+    background:#d87672;
+}
+
+a {
+    text-decoration: none;
+    color: #4b4d4d;
+    font-family: Arial;
+    font-size: 16pt;
+    margin: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+
+.mcnt {
+    margin:0 auto;
+    max-width: 400px;
+}
