@@ -23,6 +23,8 @@
 </#list>
 </table>
 
+<a href="/groupp">Добавление группы</a>
+
 <h2>Предметы</h2>
 <table>
     <th>id</th><th>Название</th>
@@ -44,6 +46,9 @@
     </tr>
 </#list>
 </table>
+
+<a href="/student">Добавление студента</a>
+
 
 <h2>Оценки</h2>
 <table>

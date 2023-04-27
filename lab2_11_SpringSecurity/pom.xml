@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>lab2_10</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>ru.itis.dis</groupId>
+    <artifactId>lab2_11_SpringSecurity</artifactId>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -47,13 +47,11 @@
             <scope>provided</scope>
         </dependency>
 
-<!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             <version>3.0.5</version>
         </dependency>
--->
 
     </dependencies>
 
@@ -66,5 +64,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
