@@ -14,5 +14,7 @@ public interface CountryRepository extends CrudRepository<Country, Long> {
     @Query("select c from Country c ")
     List<Country> getAll();
 
+    @Query("select max(c.id) + 1 from Country c ")
+    Long getNexId();
 }
 

@@ -41,14 +41,20 @@
             <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
-
-<!--
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>3.0.5</version>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
         </dependency>
--->
+
+        <!--
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-security</artifactId>
+                    <version>3.0.5</version>
+                </dependency>
+        -->
 
     </dependencies>
 

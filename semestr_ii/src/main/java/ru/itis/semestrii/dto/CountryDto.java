@@ -2,15 +2,18 @@ package ru.itis.semestrii.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import ru.itis.semestrii.model.Country;
 
-@Getter@Setter
+@Getter@Setter@ToString
 public class CountryDto {
     private Long id;
     private String code;
     private String name;
     private String alpha3;
     private String currency;
+
+    public CountryDto() {}
 
     public CountryDto(Country country) {
         this.id = country.getId();
