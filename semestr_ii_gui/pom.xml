@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.itis.semestr_ii</groupId>
-    <version>0.1</version>
+    <version>1.0</version>
 
-    <artifactId>semestr_ii</artifactId>
+    <artifactId>semestr_ii_gui</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -20,6 +20,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
             <version>3.0.5</version>
         </dependency>
         <dependency>
@@ -41,20 +46,12 @@
             <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.web</groupId>
-            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-            <version>3.0.0</version>
-            <scope>compile</scope>
-        </dependency>
 
-        <!--
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-security</artifactId>
-                    <version>3.0.5</version>
-                </dependency>
-        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.0.5</version>
+        </dependency>
 
     </dependencies>
 
@@ -67,4 +64,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>
