@@ -4,8 +4,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter@Setter@NoArgsConstructor
-public class Car {
+public class Car implements Serializable {
     private Integer id;
     private String carNumber;
     private String carBrand;

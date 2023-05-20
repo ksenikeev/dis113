@@ -1,11 +1,12 @@
 package ru.itis.semestrii.rest.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.itis.semestrii.rest.dto.UnitsDto;
 import ru.itis.semestrii.rest.model.Units;
 import ru.itis.semestrii.rest.repositoryes.UnitsRepository;
 import java.util.List;
-
+@Service
 public class UnitsService {
     @Autowired
     private UnitsRepository repository;
