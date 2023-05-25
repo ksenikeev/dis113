@@ -4,12 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import ru.itis.semestrii.rest.dto.ProductDto;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 /**
- * Список товаров
- * 1. формируется на стороне клиента (страны)
- * 2. Отправляется на центральную площадку (name, units, innerUID)
- * 3. Остальные площадки должны периодически запрашивать новые товары
- * из центральной площадки (все / начиная с некоторого времени)
+ * Предложение товара для продажи
  */
 @Getter@Setter
 @Entity
@@ -18,17 +17,33 @@ public class Sell {
     @SequenceGenerator(name = "sellGen", sequenceName = "sell_seq", allocationSize = 1)
     @GeneratedValue(generator = "sellGen", strategy = GenerationType.SEQUENCE)
     private Long id;
+
+    /** Товар */
+    @ManyToOne
     private Product product;
+
+    /** Цена за единицу товара */
     private Double price;
 
-
-   @ManyToOne
+    /** Валюта, в которой товар продается */
+    @ManyToOne
     private Currency currency;
+
+    /** Количество товара для продажи */
     private Double quantity;
+
     @ManyToOne
     private Country country;
 
+    /**  isSelled = True, если товар уже продан */
     private Boolean isSelled;
 
+    /**  UID код генерируется при создании предложения  */
+    private String uid;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date sellDate;
+
+    @ManyToOne
+    private Manufacturer manufacturer;
 }

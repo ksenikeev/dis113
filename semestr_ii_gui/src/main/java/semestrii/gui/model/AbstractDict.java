@@ -1,4 +1,4 @@
-package ru.itis.semestrii.rest.model;
+package semestrii.gui.model;
 
 
 import jakarta.persistence.Id;

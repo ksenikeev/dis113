@@ -1,13 +1,15 @@
-package ru.itis.semestrii.rest.services;
+package semestrii.gui.services;
 
+
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.itis.semestrii.rest.dto.CountryDto;
-import ru.itis.semestrii.rest.model.Country;
-import ru.itis.semestrii.rest.repositoryes.CountryRepository;
-
+import semestrii.gui.repositoryes.CountryRepository;
 import java.util.List;
+import semestrii.gui.model.Country;
 
 @Service
 public class CountryService {
@@ -15,57 +17,17 @@ public class CountryService {
     @Autowired
     private CountryRepository repository;
 
-    public CountryDto findByAlpha3(String alpha3) {
-        Country country = repository.findByAlpha3(alpha3);
-
-        CountryDto countryDto =
-                 country != null ? new CountryDto(country) : null;
-        return countryDto;
-    }
-
-    public List<CountryDto> getAll() {
-        List<Country> lst = repository.getAll();
-
-        List<CountryDto> result = lst
-                .stream()
-                .map(country -> new CountryDto(country))
-                .toList();
-        return result;
-    }
-
-    @Transactional
-    public CountryDto addCountry(CountryDto countryDto) {
-        Country country = new Country();
-        country.setName(countryDto.getName());
-        country.setCode(countryDto.getCode());
-        country.setAlpha3(countryDto.getAlpha3());
-        country.setCurrency(countryDto.getCurrency());
-        country.setId(repository.getNexId());
-        country = repository.save(country);
-        countryDto.setId(country.getId());
-        return countryDto;
-    }
-
-    @Transactional
-    public CountryDto editCountry(CountryDto countryDto) {
-        Country country = repository.findByAlpha3(countryDto.getAlpha3());
-        country.setName(countryDto.getName());
-        country.setCode(countryDto.getCode());
-        country.setAlpha3(countryDto.getAlpha3());
-        country.setCurrency(countryDto.getCurrency());
-        country.setId(countryDto.getId());
-        if (country.getAlpha2() == null)
-            country.setAlpha2(countryDto.getAlpha3().substring(0,2));
-        if (country.getFullName() == null)
-            country.setFullName(countryDto.getName());
-
-        country = repository.save(country);
-
-        return countryDto;
-    }
-
     @Transactional
     public void deleteById(Long id) {
         repository.deleteById(id);
+    }
+
+    public List<Country> getAllByPageNative(Integer pageSize, Integer pageNumber, String orderingField) {
+        return repository.getAllByPage(pageSize, pageNumber, orderingField);
+    }
+
+    public List<Country> getAllByPage(Integer pageSize, Integer pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, Sort.by("name").ascending());
+        return repository.getAllByPage(pageable);
     }
 }

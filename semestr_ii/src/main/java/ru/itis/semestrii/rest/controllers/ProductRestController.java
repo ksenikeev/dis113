@@ -19,7 +19,7 @@ public class ProductRestController {
     public List<ProductDto> getAllProduct() {
         return service.getAll()
                 .stream()
-                .map(product -> service.convertToDto(product))
+                .map(product -> service.toDto(product))
                 .toList();
     }
 
@@ -28,7 +28,7 @@ public class ProductRestController {
             @RequestParam("time") LocalDateTime time) {
         return service.getAllAfterDate(time)
                 .stream()
-                .map(product -> service.convertToDto(product))
+                .map(product -> service.toDto(product))
                 .toList();
     }
 

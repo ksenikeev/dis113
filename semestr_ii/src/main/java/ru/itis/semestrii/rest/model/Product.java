@@ -26,6 +26,7 @@ public class Product {
     @ManyToOne
     private Units units;
 
+    /**  UID код генерируется при создании продукта производителем  */
     @Column(unique = true)
     private String innerUID;
 

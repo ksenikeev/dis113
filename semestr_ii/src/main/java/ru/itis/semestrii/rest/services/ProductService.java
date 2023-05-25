@@ -40,7 +40,7 @@ public class ProductService {
         repository.save(product);
     }
 
-    public ProductDto convertToDto(Product product) {
+    public ProductDto toDto(Product product) {
         ProductDto productDto = new ProductDto();
         productDto.setName(product.getName());
         productDto.setInnerUID(product.getInnerUID());
@@ -48,7 +48,7 @@ public class ProductService {
         return productDto;
     }
 
-    public Product convertFromDto(ProductDto dto) {
+    public Product fromDto(ProductDto dto) {
         return findByInnerUID(dto.getInnerUID());
     }
 }
