@@ -21,7 +21,9 @@ public class EditableTable extends JFrame {
     }
 
     private void init() {
-        this.setLayout(new GridLayout(1, 1));
+        this.setLayout(new GridLayout(2, 1));
+
+        //JDateChooser dateChooser;
 
         Vector<String> columnNames = new Vector<>();
         Vector<Vector<String>> data = new Vector<Vector<String>>();

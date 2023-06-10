@@ -34,6 +34,7 @@ public class ProductRestController {
 
     @PostMapping("/add")
     public void addCountry(@RequestBody ProductDto dto) {
+        System.out.println(dto);
         service.addProduct(dto);
     }
 }

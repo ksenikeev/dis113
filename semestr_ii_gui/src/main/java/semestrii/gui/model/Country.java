@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Справочник стран
+ * alpha3 - международный код страны
+ */
 @Getter@Setter
 @Entity
 public class Country extends AbstractDict {

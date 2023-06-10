@@ -7,9 +7,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import semestrii.gui.model.Country;
 import semestrii.gui.repositoryes.CountryRepository;
 import java.util.List;
-import semestrii.gui.model.Country;
 
 @Service
 public class CountryService {

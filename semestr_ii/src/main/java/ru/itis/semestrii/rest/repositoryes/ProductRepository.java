@@ -17,5 +17,6 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     @Query("select p from Product p where p.createTime >= :time ")
     List<Product> getAllAfterDate(@Param("time") LocalDateTime time);
 
+
 }
 
